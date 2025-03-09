@@ -3,8 +3,10 @@
 % fitting the bandit task with RLDDM + demonstrate param recov 
 % requires an adapted mfit package in an adjacent folder
 
-addpath('../mfit')
+addpath(genpath('../mfit'))
 % note: folder should have mvis_scat_ref_corr
+
+rng(11111)
 
 %% fit
 data = load_bandit_data;
@@ -12,7 +14,7 @@ results = fit_bandit(data);
 
 %% create task for simulation
 task.C = 2;
-task.N = 200;
+task.N = 100;
 
 % generate a simple 80-20 PRL:
 task.r = [binornd(1,0.8,[task.N/2,1]), binornd(1,0.2,[task.N/2,1]);
