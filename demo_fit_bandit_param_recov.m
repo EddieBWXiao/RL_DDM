@@ -12,13 +12,11 @@ results = fit_bandit(data);
 
 %% create task for simulation
 task.C = 2;
-task.N = 400;
+task.N = 200;
 
 % generate a simple 80-20 PRL:
-task.r = [binornd(1,0.8,[task.N/4,1]), binornd(1,0.2,[task.N/4,1]);
-    binornd(1,0.2,[task.N/4,1]), binornd(1,0.8,[task.N/2,1]);
-    binornd(1,0.8,[task.N/4,1]), binornd(1,0.2,[task.N/4,1]);
-    binornd(1,0.2,[task.N/4,1]), binornd(1,0.8,[task.N/2,1])];
+task.r = [binornd(1,0.8,[task.N/2,1]), binornd(1,0.2,[task.N/2,1]);
+    binornd(1,0.2,[task.N/2,1]), binornd(1,0.8,[task.N/2,1])];
 task.s = ones(task.N,1); %one state
 
 %% parameter recovery: run
