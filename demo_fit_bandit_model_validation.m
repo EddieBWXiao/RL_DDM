@@ -187,6 +187,8 @@ hold off
 
 %% check correlation between simulated and real data
 
+calc_data_loseshift = @(x) mean(x.r(1:end-1)==0 & diff(x.c)~=0);
+
 figure;
 subplot(2,2,1)
 % real_logRT = arrayfun(@(x) mean(log(x.rt)), data);
