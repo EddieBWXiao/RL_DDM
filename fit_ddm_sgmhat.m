@@ -17,7 +17,7 @@ function results = fit_ddm_sgmhat(data)
     % drift rate scaling parameter
     param(1).name = 'kappa';
     param(1).logpdf = @(x) 0;  % uniform prior
-    param(1).lb = 0; % lower bound
+    param(1).lb = -20; % lower bound
     param(1).ub = 20;   % upper bound
     
     % decision threshold

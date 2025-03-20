@@ -32,7 +32,7 @@ function data = simfun_ddm_sgmhat(x,task,opts)
         v = kappa * s; 
         
         % response model; second arg = n_trials for sim, here is just 1
-        [data.rt(n), choice] = sim_wiener_diffusion([-v, a, z, T], 1, opts);
+        [data.rt(n), choice] = sim_wiener_diffusion([v, a, z, T], 1, opts);
         
         % record the choice
         data.c(n) = 2 - choice; %CAVEAT: hard-coded 1 & 0 to 1 & 2 switch

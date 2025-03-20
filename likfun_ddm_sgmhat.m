@@ -24,18 +24,10 @@ T = x(4); %ndt
         
         % accumulate log-likelihod
         if c == 1
-            v = -v; 
-            
-            %???
-            %w = w;
-            w = 1-w;%??? should this flip too
-        end
-        
-        %????
-        w_for_wfpt = w;
-        %w_for_wfpt = 1-w;
-        
-        P = wfpt(data.rt(n),-v,a, w_for_wfpt);  % Wiener first passage time distribution
+            v = -v;
+            w = 1-w;
+        end        
+        P = wfpt(data.rt(n), v, a, w);  % Wiener first passage time distribution
         
         if isnan(P) || P==0; P = realmin; end % avoid NaNs and zeros in the logarithm
         
