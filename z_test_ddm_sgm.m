@@ -29,8 +29,8 @@ sim_params = zeros(n_sim_subjects, 4);
 sim_params(:,1) = unifrnd(kappa_lb, kappa_ub, n_sim_subjects, 1); % kappa
 sim_params(:,2) = unifrnd(a_lb, a_ub, n_sim_subjects, 1); % a
 %sim_params(:,3) = betarnd(w_alpha, w_beta, n_sim_subjects, 1); % w (from beta distribution)
-sim_params(:,3) = 0.5*ones(n_sim_subjects,1);
-%sim_params(:,3) = unifrnd(0.3, 0.7, n_sim_subjects, 1);
+%sim_params(:,3) = 0.5*ones(n_sim_subjects,1);
+sim_params(:,3) = unifrnd(0.3, 0.7, n_sim_subjects, 1);
 sim_params(:,4) = unifrnd(T_lb, T_ub, n_sim_subjects, 1); % T
 
 
